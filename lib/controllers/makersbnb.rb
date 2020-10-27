@@ -17,4 +17,19 @@ class MakersBNB < Sinatra::Base
     flash.next[:notice] = "Welcome #{params["username"]}"
     redirect "/"
   end
+
+  get "/sessions/new" do
+    erb :'sessions/new'
+  end
+
+  post "/sessions" do
+    user = User.find_by_email(params["email"])
+    if user.password == params["password"]
+      session["user_id"] = user.id
+      flash.next[:notice] = "Welcome back, #{user.username}"
+      redirect "/"
+    else
+      redirect "/sessions/new"
+    end
+  end
 end
