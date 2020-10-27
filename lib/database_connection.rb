@@ -1,4 +1,4 @@
-require 'pg'
+require "pg"
 
 class DatabaseConnection
   def self.setup
@@ -10,10 +10,10 @@ class DatabaseConnection
   end
 
   def self.dbname
-    if ENV['ENVIRONMENT'] == 'test'
-      'makersbnb_test'
+    if ENV["RACK_ENV"] == "test"
+      "makersbnb_test"
     else
-      'makersbnb'
+      "makersbnb"
     end
   end
 end

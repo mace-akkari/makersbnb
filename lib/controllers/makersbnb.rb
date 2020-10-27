@@ -1,5 +1,20 @@
 class MakersBNB < Sinatra::Base
+  set :root, File.dirname(File.expand_path("..", __FILE__))
+  enable :sessions
+  register Sinatra::Flash
+
   get "/" do
-    "Hello world"
+    erb :index
+  end
+
+  get "/users/new" do
+    erb :'users/new'
+  end
+
+  post "/users" do
+    user = User.create(username: params["username"], email: params["email"], full_name: params["full_name"], password: params["password"])
+    session["user_id"] = user.id
+    flash.next[:notice] = "Welcome #{params["username"]}"
+    redirect "/"
   end
 end
