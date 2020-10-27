@@ -6,4 +6,7 @@ require_relative "database_connection"
 
 require_relative "models/user"
 
+require_relative "models/space"
+
+
 require_relative "controllers/makersbnb"

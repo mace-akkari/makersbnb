@@ -1,12 +1,29 @@
-<%= flash[:notice] %>
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Maker BnB</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+
+    <%= flash[:notice] %>
 
 
-<% if !@user.nil? %>
-<form action='/sessions/<%= @user.id %>' method='POST' >
-  <input type="hidden" name="_method" value='DELETE'>
-  <input type='submit' value='Log out' name='Log out'>
-</form>
-<% else %>
-<a href="/users/new" name="Sign up">Sign up</a>
-<a href="/sessions/new" name="Log in">Log in</a>
-<% end %>
+    <% if !@user.nil? %>
+    <form action='/sessions/<%= @user.id %>' method='POST' >
+      <input type="hidden" name="_method" value='DELETE'>
+      <input type='submit' value='Log out' name='Log out'>
+    </form>
+    <% else %>
+    <a href="/users/new" name="Sign up">Sign up</a>
+    <a href="/sessions/new" name="Log in">Log in</a>
+    <% end %>
+
+  </body>
+</html>

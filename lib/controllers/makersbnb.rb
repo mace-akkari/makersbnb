@@ -1,5 +1,11 @@
+require 'pg'
+require_relative './../database_connection'
+require_relative './../models/space.rb'
+
 class MakersBNB < Sinatra::Base
   set :root, File.dirname(File.expand_path("..", __FILE__))
+  session_secret
+  set :session_secret, "ENV"
   enable :sessions, :method_override
   register Sinatra::Flash
 
@@ -39,4 +45,20 @@ class MakersBNB < Sinatra::Base
     flash.next[:notice] = "Successfully logged out"
     redirect "/"
   end
+
+  get "/spaces" do
+    @spaces = Space.all
+    erb :spaces
+  end
+
+  post "/spaces" do
+    Space.create(description: params[:description], location: params[:location], availability: params[:availability])
+    redirect "/spaces"
+  end
+
+  get "/spaces/new" do
+    erb :form
+  end
+
+
 end
