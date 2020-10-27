@@ -64,7 +64,7 @@ I only want to see spaces that are available.
 ### Until a user has confirmed a booking request, that space can still be booked for that night.
 
 ```
-As a user, 
+As a user,
 Until I confirm a date for a space,
 The space will still be avilable for other users to book.
 ```
@@ -83,28 +83,3 @@ CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(50), full_name VARCH
 \c makersbnb_test
 
 CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(50), full_name VARCHAR(50), email VARCHAR(50), password VARCHAR(255))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
