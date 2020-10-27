@@ -1,9 +1,10 @@
 class MakersBNB < Sinatra::Base
   set :root, File.dirname(File.expand_path("..", __FILE__))
-  enable :sessions
+  enable :sessions, :method_override
   register Sinatra::Flash
 
   get "/" do
+    @user = User.find(session["user_id"]) unless session["user_id"].nil?
     erb :index
   end
 
@@ -31,5 +32,11 @@ class MakersBNB < Sinatra::Base
     else
       redirect "/sessions/new"
     end
+  end
+
+  delete "/sessions/:id" do
+    session["user_id"] = nil
+    flash.next[:notice] = "Successfully logged out"
+    redirect "/"
   end
 end
