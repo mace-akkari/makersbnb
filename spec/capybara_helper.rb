@@ -19,7 +19,6 @@ def login
   click_button "Log in"
 end
 
-<<<<<<< HEAD
 def login_second_user
   visit "/sessions/new"
   fill_in "email", with: "dan@gmail.com"
@@ -33,8 +32,8 @@ def spaces
   fill_in "location", with: "london"
   fill_in "availability", with: "2020-12-12"
   click_button "Submit"
-=======
+end
+
 def create_space
   Space.create(description: "nice flat", location: "London", price: 100, availability: Date.new(2021, 2, 12), user_id: 1)
->>>>>>> main
 end
