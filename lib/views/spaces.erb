@@ -22,13 +22,18 @@
     <% end %>
 
     <h1>Spaces available</h1>
-    <ul>
-      <% @spaces.each do |space| %>
-      <% @user = User.joins("INNER JOIN spaces ON spaces.user_id = users.id AND spaces.id = '#{space.id}'").first %>
-      <li>Space description:<%= space.description %></li>
-      <li>Location:<%= space.location %></li>
-      <li>Email:<%= @user.email %></li>
+    <% @spaces.each do |space| %>
+    <div id="<%= space.id %>">
+      <ul>
+        <% @user = User.joins("INNER JOIN spaces ON spaces.user_id = users.id AND spaces.id = '#{space.id}'").first %>
+        <li>Space description:<%= space.description %></li>
+        <li>Location:<%= space.location %></li>
+        <li>Email:<%= @user.email %></li>
+      </ul>
+      <form action='requests/new' method='post'>
+      <input type='submit' name='Rent me' value='Rent me'>
+      </form>
+    </div>
     <% end %>
-    </ul>
   </body>
 </html>
