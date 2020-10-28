@@ -69,13 +69,14 @@ Until I confirm a date for a space,
 The space will still be avilable for other users to book.
 ```
 
-Database Setup SQL Commands (run each command in sequential order)
+### Database Setup SQL Commands (run each command in sequential order)
 
+```
 CREATE DATABASE makersbnb;
 
 CREATE DATABASE makersbnb_test;
-
-
+```
+```
 \c makersbnb
 
 CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(50), full_name VARCHAR(50), email VARCHAR(50), password VARCHAR(255));
@@ -83,7 +84,8 @@ CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(50), full_name VARCH
 \c makersbnb_test
 
 CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(50), full_name VARCHAR(50), email VARCHAR(50), password VARCHAR(255))
-
+```
+```
 \c makersbnb
 
 CREATE TABLE spaces (id SERIAL PRIMARY KEY, username VARCHAR(60), email VARCHAR(60), description VARCHAR(120), price INT4, location VARCHAR(60), availability DATE);
@@ -91,3 +93,4 @@ CREATE TABLE spaces (id SERIAL PRIMARY KEY, username VARCHAR(60), email VARCHAR(
 \c makersbnb_test
 
 CREATE TABLE spaces_test(id SERIAL PRIMARY KEY, username VARCHAR(60), email VARCHAR(60), description VARCHAR(120), price INT4, location VARCHAR(60), availability DATE);
+```
