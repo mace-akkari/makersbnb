@@ -48,8 +48,6 @@ class MakersBNB < Sinatra::Base
   get "/spaces" do
     @user = User.find(session["user_id"]) unless session["user_id"].nil?
     @spaces = Space.all
-    p 'WE ARE HERE'
-    p Space.fetch_email
     erb :spaces
   end
 
