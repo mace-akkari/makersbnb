@@ -1,12 +1,15 @@
 feature "Spaces for rent" do
-
+  before :each do
+    create_user
+    create_space
+  end
   scenario "Welcoming message" do
     visit "/spaces"
     expect(page).to have_content "Spaces available"
   end
 
   scenario "display spaces for rent" do
-    spaces
+    visit "/spaces"
     expect(page).to have_content "Space description:"
   end
 
@@ -17,7 +20,6 @@ feature "Spaces for rent" do
 
   scenario "displey email address" do
     visit "/spaces"
-    expect(page).to have_content "email:"
+    expect(page).to have_content "Email:"
   end
-
 end
