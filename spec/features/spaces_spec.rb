@@ -18,6 +18,11 @@ feature "Spaces for rent" do
     expect(page).to have_content "Location:"
   end
 
+  scenario "display price of the space for rent" do
+    visit "/spaces"
+    expect(page).to have_content "Price:"
+  end
+
   scenario "displey email address" do
     visit "/spaces"
     expect(page).to have_content "Email:"

@@ -48,11 +48,13 @@ class MakersBNB < Sinatra::Base
   get "/spaces" do
     @user = User.find(session["user_id"]) unless session["user_id"].nil?
     @spaces = Space.all
+    p 'WE ARE HERE'
+    p Space.fetch_email
     erb :spaces
   end
 
   post "/spaces" do
-    Space.create(description: params[:description], location: params[:location], availability: params[:availability], user_id: session[:user_id])
+    Space.create(description: params[:description], location: params[:location], availability: params[:availability], price: params[:price], user_id: session[:user_id])
     redirect "/spaces"
   end
 
