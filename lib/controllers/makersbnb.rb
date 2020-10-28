@@ -10,8 +10,7 @@ class MakersBNB < Sinatra::Base
   register Sinatra::Flash
 
   get "/" do
-    @user = User.find(session["user_id"]) unless session["user_id"].nil?
-    erb :index
+    redirect "/spaces"
   end
 
   get "/users/new" do
@@ -34,7 +33,7 @@ class MakersBNB < Sinatra::Base
     if user.password == params["password"]
       session["user_id"] = user.id
       flash.next[:notice] = "Welcome back, #{user.username}"
-      redirect "/"
+      redirect "/spaces"
     else
       redirect "/sessions/new"
     end
@@ -47,6 +46,7 @@ class MakersBNB < Sinatra::Base
   end
 
   get "/spaces" do
+    @user = User.find(session["user_id"]) unless session["user_id"].nil?
     @spaces = Space.all
     erb :spaces
   end

@@ -13,3 +13,11 @@ def login
   fill_in "password", with: "helloworld"
   click_button "Log in"
 end
+
+def spaces
+  visit('/spaces/new')
+  fill_in 'description', with: "Space description:"
+  fill_in 'location', with: "london"
+  fill_in 'availability', with: "2020-12-12"
+  click_button "Submit"
+end

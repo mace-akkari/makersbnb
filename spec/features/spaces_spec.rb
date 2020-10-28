@@ -6,7 +6,7 @@ feature "Spaces for rent" do
   end
 
   scenario "display spaces for rent" do
-    visit "/spaces"
+    spaces
     expect(page).to have_content "Space description:"
   end
 

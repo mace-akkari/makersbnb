@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="">
   </head>
   <body>
+    <%= flash[:notice] %>
+
+    <% if !@user.nil? %>
+    <form action='/sessions/<%= @user.id %>' method='POST' >
+      <input type="hidden" name="_method" value='DELETE'>
+      <input type='submit' value='Log out' name='Log out'>
+    </form>
+    <% else %>
+    <a href="/users/new" name="Sign up">Sign up</a>
+    <a href="/sessions/new" name="Log in">Log in</a>
+    <% end %>
+
     <h1>Spaces available</h1>
     <ul>
       <% @spaces.each do |space| %>
@@ -16,6 +28,7 @@
       <li>Location:<%= space.location %></li>
     <% end %>
     </ul>
+    
 
 
   </body>
