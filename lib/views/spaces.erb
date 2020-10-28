@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-  </head>
-  <body>
-    <%= flash[:notice] %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <%= flash[:notice] %>
 
-    <% if !@user.nil? %>
-    <form action='/sessions/<%= @user.id %>' method='POST' >
-      <input type="hidden" name="_method" value='DELETE'>
-      <input type='submit' value='Log out' name='Log out'>
-    </form>
-    <% else %>
-    <a href="/users/new" name="Sign up">Sign up</a>
-    <a href="/sessions/new" name="Log in">Log in</a>
-    <% end %>
+  <% if !@user.nil? %>
+  <form action='/sessions/<%= @user.id %>' method='POST' >
+    <input type="hidden" name="_method" value='DELETE'>
+    <input type='submit' value='Log out' name='Log out'>
+  </form>
+  <% else %>
+  <a href="/users/new" name="Sign up">Sign up</a>
+  <a href="/sessions/new" name="Log in">Log in</a>
+  <% end %>
+
 
     <h1>Spaces available</h1>
     <% @spaces.each do |space| %>
@@ -29,6 +30,7 @@
         <li>Space description:<%= space.description %></li>
         <li>Location:<%= space.location %></li>
         <li>Email:<%= @user.email %></li>
+        <li>Price:<%= space.price %></li>
       </ul>
       <form action='requests/new' method='post'>
       <input type='submit' name='Rent me' value='Rent me'>
@@ -37,3 +39,4 @@
     <% end %>
   </body>
 </html>
+
