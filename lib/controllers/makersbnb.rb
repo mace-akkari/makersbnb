@@ -3,6 +3,7 @@ require_relative "./../database_connection"
 require_relative "./../models/space.rb"
 
 class MakersBNB < Sinatra::Base
+  attr_reader :session
   set :root, File.dirname(File.expand_path("..", __FILE__))
   session_secret
   set :session_secret, "ENV"
@@ -19,7 +20,7 @@ class MakersBNB < Sinatra::Base
 
   post "/users" do
     user = User.create(username: params["username"], email: params["email"], full_name: params["full_name"], password: params["password"])
-    session["user_id"] = user.id
+    @session["user_id"] = user.id
     flash.next[:notice] = "Welcome #{params["username"]}"
     redirect "/"
   end
