@@ -25,10 +25,11 @@
     <div id="<%= space.id %>">
       <ul>
         <% @user = User.joins("INNER JOIN spaces ON spaces.user_id = users.id AND spaces.id = '#{space.id}'").first %>
-        <li>Space description:<%= space.description %></li>
-        <li>Location:<%= space.location %></li>
-        <li>Email:<%= @user.email %></li>
-        <li>Price:<%= space.price %></li>
+        <li>Space description: <%= space.description %></li>
+        <li>Location: <%= space.location %></li>
+        <li>Availability: <%= space.start_date %> - <%= space.end_date %></li>
+        <li>Email: <%= @user.email %></li>
+        <li>Price: <%= space.price %></li>
       </ul>
       <form action='requests/new' method='post'>
       <input type='submit' name='Rent me' value='Rent me'>
@@ -37,4 +38,3 @@
     <% end %>
   </body>
 </html>
-
