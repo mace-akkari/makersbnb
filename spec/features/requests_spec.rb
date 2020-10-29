@@ -6,8 +6,8 @@ feature "requests" do
     create_space
     #actions
     login("tenant")
+    fill_in "date", with: "15/02/2021"
     click_button "rent-1"
-    fill_in "date", with: "01/01/2021"
     click_button "Submit"
     # Request created
     click_button "Log out"
@@ -15,5 +15,18 @@ feature "requests" do
     visit "/requests"
     expect(page).to have_content "Big house"
     expect(page).to have_content "01/01/2021"
+  end
+end
+
+feature "confirmation message" do
+  scenario 'tenant sees the confirmation message' do
+    create_user("landlord")
+    create_user("tenant")
+    create_space
+    #actions
+    login("tenant")
+    fill_in "date", with: "15/02/2021"
+    click_button "rent-1"
+    expect(page).to have_content "Your booking request for  nice flat on 15/02/2021 has been sent"
   end
 end
