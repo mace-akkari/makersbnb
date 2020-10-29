@@ -88,9 +88,9 @@ CREATE TABLE users (id SERIAL PRIMARY KEY, username VARCHAR(50), full_name VARCH
 ```
 \c makersbnb
 
-CREATE TABLE spaces (id SERIAL PRIMARY KEY, description VARCHAR(120), price INT4, location VARCHAR(60), availability DATE, user_id INT4);
+CREATE TABLE spaces (id SERIAL PRIMARY KEY, description VARCHAR(120), price INT4, location VARCHAR(60), start_date DATE, end_date DATE, user_id INT4);
 
 \c makersbnb_test
 
-CREATE TABLE spaces (id SERIAL PRIMARY KEY, description VARCHAR(120), price INT4, location VARCHAR(60), availability DATE, user_id INT4);
+CREATE TABLE spaces (id SERIAL PRIMARY KEY, description VARCHAR(120), price INT4, location VARCHAR(60), start_date DATE, end_date DATE, user_id INT4);
 ```
