@@ -3,7 +3,6 @@ require_relative "./../database_connection"
 require_relative "./../models/space.rb"
 
 class MakersBNB < Sinatra::Base
-  attr_reader :session
   set :root, File.dirname(File.expand_path("..", __FILE__))
   session_secret
   set :session_secret, "ENV"
