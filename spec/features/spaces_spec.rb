@@ -20,7 +20,7 @@ feature "Spaces for rent" do
 
   scenario "display price of the space for rent" do
     visit "/spaces"
-    expect(page).to have_content "Price:"
+    expect(page).to have_content "Price per night:"
   end
 
   scenario "displey email address" do

@@ -1,15 +1,19 @@
 class Request < ActiveRecord::Base
-  belongs_to :requests
-
-  def user_id
-    requests = Request.joins("INNER JOIN spaces ON spaces.id = requests.space_id AND spaces.user_id = #{@session["user_id"]}")
+  def username
+    requests = User.joins("INNER JOIN requests ON users.id = requests.user_id AND users.id = #{user_id}")
     request = requests.first
-    request.user_id
+    request.username
   end
 
-  def date
-    requests = Request.joins("INNER JOIN spaces ON spaces.id = requests.space_id AND spaces.user_id = #{session["user_id"]}")
+  def description
+    requests = Space.joins("INNER JOIN requests ON spaces.id = requests.space_id AND spaces.id = #{space_id}")
     request = requests.first
-    request.date
+    request.description
+  end
+
+  def landlord_id
+    spaces = Space.joins("INNER JOIN requests ON spaces.id = requests.space_id AND spaces.id = #{space_id}")
+    space = spaces.first
+    space.user_id
   end
 end

@@ -22,18 +22,23 @@
   <h1>Spaces available</h1>
   <% @spaces.each do |space| %>
   <div id="<%= space.id %>">
+    <form action='/requests' method='post'>
     <ul>
       <li>Space description: <%= space.description %></li>
       <li>Location: <%= space.location %></li>
-      <li>Availability: <input type="date" value="<%= space.start_date %>" min="<%= space.start_date %>" max="<%= space.end_date %>">
+      <li>Availability: <input name='date' type="date" value="<%= space.start_date %>" min="<%= space.start_date %>" max="<%= space.end_date %>">
       </li>
       <li>Email: <%= space.email %></li>
       <li>Price per night: <%= space.price %></li>
     </ul>
-    <form action='requests/new' method='post'>
+      <input type='hidden' name='space_id' value=<%= space.id %>>
       <input type='submit' name="rent-<%= space.id %>" value='Rent me'>
     </form>
   </div>
   <% end %>
+  <br>
+  <form action='/spaces/new'>
+  <input type='submit' value='List new space'>
+  </form>
 </body>
 </html>

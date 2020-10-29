@@ -19,7 +19,7 @@ class MakersBNB < Sinatra::Base
 
   post "/users" do
     user = User.create(username: params["username"], email: params["email"], full_name: params["full_name"], password: params["password"])
-    @session["user_id"] = user.id
+    session["user_id"] = user.id
     flash.next[:notice] = "Welcome #{params["username"]}"
     redirect "/"
   end
@@ -52,7 +52,7 @@ class MakersBNB < Sinatra::Base
   end
 
   post "/spaces" do
-    Space.create(description: params[:description], location: params[:location], availability: params[:availability], price: params[:price], user_id: session[:user_id])
+    Space.create(description: params[:description], location: params[:location], start_date: params[:start_date], end_date: params[:end_date], price: params[:price], user_id: session[:user_id])
     redirect "/spaces"
   end
 
@@ -61,18 +61,14 @@ class MakersBNB < Sinatra::Base
   end
 
   get "/requests" do
-    @requests = Request.joins("INNER JOIN spaces ON spaces.id = requests.space_id AND spaces.user_id = #{session["user_id"]}")
-    p @requests
+    @requests = Request.all
+    @users_requests = @requests.select { |request| request.landlord_id == session["user_id"] }
+    p @users_requests
     erb :'requests/index'
   end
 
-  get "/requests/new/:id" do
-    @space = Space.find(params[:id])
-    erb :'requests/new'
-  end
-
   post "/requests" do
-    Request.create(user_id: session["user_id"], space_id: params[:space_id], date: params[:date], confirmed: false)
-    redirect "/spaces"
+    @space_request = Request.create(user_id: session["user_id"], space_id: params[:space_id], date: params[:date], confirmed: false)
+    erb :'requests/confirmation'
   end
 end
