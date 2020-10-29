@@ -18,7 +18,7 @@ feature "Spaces for rent" do
     expect(page).to have_content "Price per night: 100"
   end
 
-  scenario "displey email address" do
+  scenario "display email address" do
     visit "/spaces"
     expect(page).to have_content "Email: otisvickersgraver@gmail.com"
   end
