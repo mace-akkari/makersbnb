@@ -9,7 +9,7 @@ def create_user
 end
 
 def create_second_user
-  User.create(username: "ds.danielh", full_name: "Dan Holmes", email: "dan@gmail.com", password: "hunter2")
+  User.create(id: 2, username: "ds.danielh", full_name: "Dan Holmes", email: "dan@gmail.com", password: "hunter2")
 end
 
 def login
@@ -35,5 +35,5 @@ def spaces
 end
 
 def create_space
-  Space.create(description: "nice flat", location: "London", price: 100, availability: Date.new(2021, 2, 12), user_id: 1)
+  Space.create(description: "nice flat", location: "London", price: 100, start_date: Date.new(2021, 2, 12), end_date: Date.new(2021, 5, 20), user_id: 1)
 end
