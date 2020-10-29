@@ -97,9 +97,9 @@ CREATE TABLE spaces (id SERIAL PRIMARY KEY, description VARCHAR(120), price INT4
 ```
 \c makersbnb
 
-REATE TABLE requests (id SERIAL PRIMARY KEY, user_id INT4, space_id INT4, date DATE, confirmed BOOL);
+CREATE TABLE requests (id SERIAL PRIMARY KEY, user_id INT4, space_id INT4, date DATE, confirmed BOOL);
 
 \c makersbnb_test
 
-REATE TABLE requests (id SERIAL PRIMARY KEY, user_id INT4, space_id INT4, date DATE, confirmed BOOL);
+CREATE TABLE requests (id SERIAL PRIMARY KEY, user_id INT4, space_id INT4, date DATE, confirmed BOOL);
 ```
