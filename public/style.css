@@ -9,17 +9,19 @@ body {
   text-align: center;
 }
 
-.right-img, .left-img {
-  height: 100%;
-  width: 20%;
-  
+.right-img  {
+  background: url('right-banner.jpeg');
+}
+
+.left-img {
+  background: url('left-banner.jpeg');
 }
 
 .banner {
-  background: url('BnB.jpeg');
   border: 5px solid black;
   background-size: cover;
-  max-width: 100%;
+  height: 100%;
+  width: 20%;
 }
 
 footer {
