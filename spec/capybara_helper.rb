@@ -9,7 +9,7 @@ def create_user
 end
 
 def create_second_user
-  User.create(id: 2, username: "ds.danielh", full_name: "Dan Holmes", email: "dan@gmail.com", password: "hunter2")
+  User.create(username: "ds.danielh", full_name: "Dan Holmes", email: "dan@gmail.com", password: "hunter2")
 end
 
 def login
@@ -31,6 +31,7 @@ def spaces
   fill_in "description", with: "Big house"
   fill_in "location", with: "london"
   fill_in "availability", with: "2020-12-12"
+  fill_in "availability", with: "2021-5-20"
   click_button "Submit"
 end
 

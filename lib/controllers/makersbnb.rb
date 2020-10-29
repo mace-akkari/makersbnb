@@ -64,4 +64,9 @@ class MakersBNB < Sinatra::Base
     @space = Space.find(params[:id])
     erb :'requests/new'
   end
+
+  post "/requests" do
+    Request.create(user_id: session["user_id"], space_id: params[:space_id], date: params[:date], confirmed: false)
+  end
+
 end

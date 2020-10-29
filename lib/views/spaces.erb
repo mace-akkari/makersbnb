@@ -31,7 +31,7 @@
         <li>Email: <%= @user.email %></li>
         <li>Price: <%= space.price %></li>
       </ul>
-      <form action='requests/new/<%= space.id %>' method='post'>
+      <form action='requests/new/<%= space.id %>' method='get'>
       <input type='submit' value='Rent me' name="rent-<%= space.id %>">
       </form>
     </div>
