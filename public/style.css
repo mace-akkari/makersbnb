@@ -2,6 +2,7 @@ body {
   background: url('makersBnB.jpeg') no-repeat center center fixed;
   background-size: cover;
   color: white;
+  margin: 0px;
 }
 
 .header{
