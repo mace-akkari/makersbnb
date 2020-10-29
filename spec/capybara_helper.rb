@@ -6,7 +6,12 @@ def setup_test_database
 end
 
 def create_user(user = "otisvg")
-  User.create(username: user, full_name: "Otis Vickers-Graver", email: user.to_s + "@gmail.com", password: "helloworld")
+  visit "/users/new"
+  fill_in "username", with: user
+  fill_in "full_name", with: "Otis Vickers-Graver"
+  fill_in "email", with: user + "@gmail.com"
+  fill_in "password", with: "helloworld"
+  click_button "Submit"
 end
 
 def login(user = "otisvg")

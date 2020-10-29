@@ -18,8 +18,10 @@ class MakersBNB < Sinatra::Base
   end
 
   post "/users" do
-    user = User.create(username: params["username"], email: params["email"], full_name: params["full_name"], password: params["password"])
-    session["user_id"] = user.id
+    @user = User.new(username: params["username"], email: params["email"], full_name: params["full_name"])
+    @user.raw_password = params["password"]
+    @user.save!
+    session["user_id"] = @user.id
     flash.next[:notice] = "Welcome #{params["username"]}"
     redirect "/"
   end
@@ -29,12 +31,13 @@ class MakersBNB < Sinatra::Base
   end
 
   post "/sessions" do
-    user = User.find_by_email(params["email"])
-    if user.password == params["password"]
-      session["user_id"] = user.id
-      flash.next[:notice] = "Welcome back, #{user.username}"
+    @user = User.find_by_email(params["email"])
+    if @user.raw_password == params["password"]
+      session["user_id"] = @user.id
+      flash.next[:notice] = "Welcome back, #{@user.username}"
       redirect "/spaces"
     else
+      flash.next[:warning] = "Incorrect email/password"
       redirect "/sessions/new"
     end
   end
