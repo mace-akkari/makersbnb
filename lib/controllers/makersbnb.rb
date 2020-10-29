@@ -1,6 +1,6 @@
-require 'pg'
-require_relative './../database_connection'
-require_relative './../models/space.rb'
+require "pg"
+require_relative "./../database_connection"
+require_relative "./../models/space.rb"
 
 class MakersBNB < Sinatra::Base
   set :root, File.dirname(File.expand_path("..", __FILE__))
@@ -52,7 +52,7 @@ class MakersBNB < Sinatra::Base
   end
 
   post "/spaces" do
-    Space.create(description: params[:description], location: params[:location], start_date: params[:start_date], end_date: params[:end_date],  price: params[:price], user_id: session[:user_id])
+    Space.create(description: params[:description], location: params[:location], start_date: params[:start_date], end_date: params[:end_date], price: params[:price], user_id: session[:user_id])
     redirect "/spaces"
   end
 
@@ -60,5 +60,15 @@ class MakersBNB < Sinatra::Base
     erb :form
   end
 
+  get "/requests" do
+    @requests = Request.all
+    @users_requests = @requests.select { |request| request.landlord_id == session["user_id"] }
+    p @users_requests
+    erb :'requests/index'
+  end
 
+  post "/requests" do
+    @space_request = Request.create(user_id: session["user_id"], space_id: params[:space_id], date: params[:date], confirmed: false)
+    erb :'requests/confirmation'
+  end
 end

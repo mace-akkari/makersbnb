@@ -6,4 +6,5 @@ class Space < ActiveRecord::Base
     user = users.first
     user.email
   end
+  
 end

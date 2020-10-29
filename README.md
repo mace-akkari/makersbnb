@@ -94,3 +94,12 @@ CREATE TABLE spaces (id SERIAL PRIMARY KEY, description VARCHAR(120), price INT4
 
 CREATE TABLE spaces (id SERIAL PRIMARY KEY, description VARCHAR(120), price INT4, location VARCHAR(60), start_date DATE, end_date DATE, user_id INT4);
 ```
+```
+\c makersbnb
+
+CREATE TABLE requests (id SERIAL PRIMARY KEY, user_id INT4, space_id INT4, date DATE, confirmed BOOL);
+
+\c makersbnb_test
+
+CREATE TABLE requests (id SERIAL PRIMARY KEY, user_id INT4, space_id INT4, date DATE, confirmed BOOL);
+```

@@ -1,0 +1,8 @@
+<h1>Rental form for <%= @space.description %></h1>
+
+<form action='/requests' method='post'>
+  <label fname='date'>Rental date:</label><br>
+  <input type='date' name='date' placeholder='YYYY-MM-DD'>
+  <input type='hidden' name='space_id' value='<%= @space.id %>%'>
+  <input type='submit' name='Submit'>
+</form>
