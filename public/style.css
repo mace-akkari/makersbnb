@@ -1,5 +1,5 @@
 body {
-  background: url('makersBnB.jpeg') no-repeat center center fixed; 
+  background: url('makersBnB.jpeg') no-repeat center center fixed;
   background-size: cover;
   color: white;
 }
@@ -8,6 +8,18 @@ body {
   text-align: center;
 }
 
+.right-img, .left-img {
+  height: 100%;
+  width: 20%;
+  
+}
+
+.banner {
+  background: url('BnB.jpeg');
+  border: 5px solid black;
+  background-size: cover;
+  max-width: 100%;
+}
 
 footer {
   text-align: center;
