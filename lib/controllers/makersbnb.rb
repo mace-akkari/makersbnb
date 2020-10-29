@@ -60,6 +60,12 @@ class MakersBNB < Sinatra::Base
     erb :form
   end
 
+  get "/requests" do
+    @requests = Request.joins("INNER JOIN spaces ON spaces.id = requests.space_id AND spaces.user_id = #{session["user_id"]}")
+    p @requests
+    erb :'requests/index'
+  end
+
   get "/requests/new/:id" do
     @space = Space.find(params[:id])
     erb :'requests/new'
@@ -67,6 +73,6 @@ class MakersBNB < Sinatra::Base
 
   post "/requests" do
     Request.create(user_id: session["user_id"], space_id: params[:space_id], date: params[:date], confirmed: false)
+    redirect "/spaces"
   end
-
 end

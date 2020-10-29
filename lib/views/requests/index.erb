@@ -1,0 +1,3 @@
+<% @requests.each do |request| %>
+<%= request.space_id %> has been requested by <%= request.user_id %> for <%= request.date %>.
+<% end %>
