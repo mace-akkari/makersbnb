@@ -13,3 +13,4 @@ gem "sinatra"
 gem "sinatra-flash"
 gem "shotgun"
 gem "sinatra-activerecord"
+gem 'bcrypt', '~> 3.1', '>= 3.1.16'
