@@ -5,7 +5,7 @@ def setup_test_database
 end
 
 def create_user
-  User.create(id: 1, username: "otisvg", full_name: "Otis Vickers-Graver", email: "otisvickersgraver@gmail.com", password: "helloworld")
+  User.create(username: "otisvg", full_name: "Otis Vickers-Graver", email: "otisvickersgraver@gmail.com", password: "helloworld")
 end
 
 def create_second_user

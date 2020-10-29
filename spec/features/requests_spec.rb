@@ -6,7 +6,8 @@ feature "requests" do
     create_space
     #actions
     login
-    find("1").click_button "Rent me"
+    save_and_open_page
+    click_button "rent-1"
     fill_in "date", with: "01/01/2021"
     click_button "Submit"
     # Request created

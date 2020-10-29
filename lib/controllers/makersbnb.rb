@@ -1,6 +1,6 @@
-require 'pg'
-require_relative './../database_connection'
-require_relative './../models/space.rb'
+require "pg"
+require_relative "./../database_connection"
+require_relative "./../models/space.rb"
 
 class MakersBNB < Sinatra::Base
   set :root, File.dirname(File.expand_path("..", __FILE__))
@@ -60,5 +60,8 @@ class MakersBNB < Sinatra::Base
     erb :form
   end
 
-
+  get "/requests/new/:id" do
+    @space = Space.find(params[:id])
+    erb :'requests/new'
+  end
 end
