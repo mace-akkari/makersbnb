@@ -1,6 +1,4 @@
 <% @users_requests.each do |request| %>
 <%= request.description %> has been requested by <%= request.username %> for <%= request.date %>.
-  <%# <%= request.hidden_field.confirmed, value="true" %>
-  <%# <%= request.submit%>
   <input type='submit' name='approve' value='Approve request'>
 <% end %>

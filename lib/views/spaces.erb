@@ -24,15 +24,24 @@
       <li>Price per night: <%= space.price %></li>
     </ul>
       <input type='hidden' name='space_id' value=<%= space.id %>>
+      <% if !@user.nil? %>
       <input type='submit' name="rent-<%= space.id %>" value='Rent me'>
+      <% else %>
+      Log in to rent!
+      <% end %>
     </form>
   </div>
   <% end %>
   <br>
+  <% if !@user.nil? %>
   <form action='/spaces/new'>
   <input type='submit' value='List new space'>
   </form>
   <form action='/requests'>
   <input type='submit' value='See pending for approval tenant requests'>
   </form>
+  <% else %>
+  Log in to list a new space!
+  <% end %>
+
 </div>
