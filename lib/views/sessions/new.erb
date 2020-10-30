@@ -1,9 +1,12 @@
-<%= flash[:warning] %>
 
-<form action='/sessions' method='post'>
-  <label for="email">Email:</label><br>
-  <input type="text" name="email"><br>
-  <label for="password">Password:</label><br>
-  <input type="password" name="password"><br>
-  <input type="submit" name="Log in" value='Log in'><br>
-</form>
+<div class="ext-controller">
+<%= flash[:warning] %>
+  
+  <form action='/sessions' method='post'>
+    <label for="email">Email:</label><br>
+    <input type="text" name="email"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" name="password"><br>
+    <input class="submit" type="submit" name="Log in" value='Log in'><br>
+  </form>
+</div>
