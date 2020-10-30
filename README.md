@@ -20,7 +20,7 @@ An Airbnb clone created for our Week 5 group project at Makers. We were given a 
 * When a pair got blocked, or just needed some help with understanding a concept, we wouldn't shy away from asking the other pair for help - which often helped unblock us. If we were still blocked, we'd reach out to a coach.
 
 #### What we learnt this week
-* Consolidated knowledge on building Sinatra apps using a database
+* Consolidated knowledge on building Sinatra apps using a database following TDD processes
 * How to implement ActiveRecord, and define custom methods when necessary
 * How to implement BCrypt password authentication
 * Breaking down a specification into user stories, and assigning them as tasks to pairs
