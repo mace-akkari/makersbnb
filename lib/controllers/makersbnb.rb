@@ -66,12 +66,22 @@ class MakersBNB < Sinatra::Base
 
   get "/requests" do
     @requests = Request.all
-    @users_requests = @requests.select { |request| request.landlord_id == session["user_id"] }
+    @property_requests = @requests.select { |request| request.landlord_id == session["user_id"] }
+    @property_requests = @property_requests.select { |request| request.confirmed == false }
+    @your_requests = @requests.select { |request| request.user_id == session["user_id"] }
     erb :'requests/index'
   end
 
   post "/requests" do
     @space_request = Request.create(user_id: session["user_id"], space_id: params[:space_id], date: params[:date], confirmed: false)
     erb :'requests/confirmation'
+  end
+
+  post "/requests/approve/:id" do
+    # update request with id id set approved = true
+    request = Request.find(params["id"])
+    request.confirmed = true
+    request.save
+    redirect "/requests"
   end
 end
