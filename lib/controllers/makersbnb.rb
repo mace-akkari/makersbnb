@@ -4,6 +4,7 @@ require_relative "./../models/space.rb"
 
 class MakersBNB < Sinatra::Base
   set :root, File.dirname(File.expand_path("..", __FILE__))
+  set :public_folder, Proc.new { File.join(root, "../public") }
   session_secret
   set :session_secret, "ENV"
   enable :sessions, :method_override
@@ -66,7 +67,6 @@ class MakersBNB < Sinatra::Base
   get "/requests" do
     @requests = Request.all
     @users_requests = @requests.select { |request| request.landlord_id == session["user_id"] }
-    p @users_requests
     erb :'requests/index'
   end
 
