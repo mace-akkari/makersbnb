@@ -77,19 +77,19 @@ I would like to approve requests from tenants.
 
 ```
 As a tenant,
-So I can't book the same date as another tenant,
+So I can't book on the same date as another tenant,
 I only want to see spaces that are available.
 ```
 
 ```
 As a user,
 Until I confirm a date for a space,
-The space will still be avilable for other users to book.
+The space will still be available for other users to book.
 ```
 
 ### Database Setup SQL Commands (run each command in sequential order)
 
-##### Setting up the main database
+##### Setting up the application database
 ```
 CREATE DATABASE makersbnb;
 
