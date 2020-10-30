@@ -14,10 +14,13 @@ An Airbnb clone created for our Week 5 group project at Makers. We were given a 
 * We held daily stand-ups, midday-checkins and a retro at the end of the working day.
 * We all had a chance to work on important features, and would review and merge eachothers' pull requests so everyone could have input, and understand eachothers' code.
 
+---
 
 #### Challenges and how we overcame them
 * We found using the git branch/pull request/merge workflow confusing at first - we weren't certain that we were applying it correctly. We decided to watch a few videos together to ensure that we were approaching this new git workflow correctly, and soon after, we were able to confidently apply this newfound knowledge.
 * When a pair got blocked, or just needed some help with understanding a concept, we wouldn't shy away from asking the other pair for help - which often helped unblock us. If we were still blocked, we'd reach out to a coach.
+
+---
 
 #### What we learnt this week
 * Consolidated knowledge on building Sinatra apps using a database following TDD processes
@@ -28,11 +31,15 @@ An Airbnb clone created for our Week 5 group project at Makers. We were given a 
 * How to use the git branch/pull request/merge workflow
 * How to apply CSS to make our app look pretty
 
+---
+
 #### Our process for splitting user stories and pairing in general
 * A big priority was ensuring everyone on the team could understand the codebase as a whole - whilst merging our pull requests we would each explain our changes to the group.
 * We prioritised pairing on tasks that we felt could help us consolidate knowledge and learn concepts we may not have initially been as confident with. For example, if a couple of people wanted to learn more about ActiveRecord, they would pair up and work on a task associated with ActiveRecord (e.g. user authentication/listing spaces).
 
-<br>
+
+---
+
 
 ## User Stories
 
@@ -84,6 +91,8 @@ As a user,
 Until I confirm a date for a space,
 The space will still be available for other users to book.
 ```
+
+---
 
 ### Database Setup SQL Commands (run each command in sequential order)
 
