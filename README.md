@@ -5,9 +5,7 @@
 ---
 
 #### Project Summary
-An Airbnb clone created for our Week 5 group project at Makers. We were given a list of specifications that we broke down into into the user stories listed below. We used these user stories to split up tasks and assign them to pairs.  
-
-If you would like to try our project out, you'll first need to create a PostgresSQL database and include relevant tables - the commands for doing so can be found at the end of this document.
+An Airbnb clone created for our Week 5 group project at Makers. We were given a list of specifications that we broke down into into the user stories listed below. We used these user stories to split up tasks and assign them to pairs. If you would like to try our project out, you'll first need to create a PostgresSQL database and include relevant tables - the commands for doing so can be found at the end of this document.
 
 ---
 
