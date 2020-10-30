@@ -32,15 +32,15 @@ body {
 .main-content {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  margin: 12px;
 }
 /********** External pages **********/
 
 .ext-controller {
   text-align: center;
   align-content: center;
-  align-self: center;
-  justify-items: center;
   color: white;
+
 }
 
 .control  {
