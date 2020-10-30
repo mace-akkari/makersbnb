@@ -36,6 +36,26 @@ body {
   padding: 5px;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  margin: auto;
+}
+
+.form > label {
+  padding-top: 20px;
+  }
+
+.form-desc {
+  height:100px;
+}
+
+.small-form {
+  max-width: 30%;
+}
+
 /************************************/
 
 .banner {
