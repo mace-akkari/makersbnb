@@ -20,6 +20,6 @@ feature "Spaces for rent" do
 
   scenario "display email address" do
     visit "/spaces"
-    expect(page).to have_content "Email: otisvickersgraver@gmail.com"
+    expect(page).to have_content "Email: otisvg@gmail.com"
   end
 end
