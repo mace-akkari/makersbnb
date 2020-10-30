@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <base href="/">
-  <link href="../../public/style.css" type="text/css">
-</head>
-<body>
   <%= flash[:notice] %>
 
   <% if !@user.nil? %>
@@ -40,5 +31,3 @@
   <form action='/spaces/new'>
   <input type='submit' value='List new space'>
   </form>
-</body>
-</html>
