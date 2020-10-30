@@ -1,13 +1,15 @@
-<form action='/spaces' method='post'>
-  <label for="description">Description:</label>
-  <input type='text' name='description'>
-  <label for="location">Location:</label>
-  <input type='text' name='location'>
-  <label for="start">Start date:</label>
-  <input type='date' name='start_date'>
-  <label for="start">End date:</label>
-  <input type='date' name='end_date'>
-  <label for="start">Price:</label>
-  <input type='text' name='price'>
-  <input type='submit' name='Submit'>
-</form>
+<div class="outer">
+  <form class="form" action='/spaces' method='post'>
+    <label for="description">Description:</label>
+    <input class="form-desc" type='text' name='description'>
+    <label class="small-form" for="location">Location:</label>
+    <input class="small-form" type='text' name='location'>
+    <label for="start">Start date:</label>
+    <input class="small-form" type='date' name='start_date'>
+    <label for="start">End date:</label>
+    <input class="small-form" type='date' name='end_date'>
+    <label for="start">Price per night:</label>
+    <input class="small-form" type='text' name='price'>
+    <input class="small-form" type='submit' name='Submit'>
+  </form>
+</div>
