@@ -2,7 +2,6 @@
 
 <div style="text-align: center"> by: <a href="https://github.com/mace-akkari">Mace</a>, <a href="https://github.com/gonzalober">Gonzalo</a>, <a href="https://github.com/otisvg">Otis</a>, <a href="https://github.com/dan-holmes">Dan</a></div>
 <br>
----
 
 
 #### Project Summary
