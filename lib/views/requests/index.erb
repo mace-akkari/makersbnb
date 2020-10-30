@@ -1,4 +1,19 @@
-<% @users_requests.each do |request| %>
+<h1>Requests for your properties</h1>
+<% @property_requests.each do |request| %>
 <%= request.description %> has been requested by <%= request.username %> for <%= request.date %>.
-  <input type='submit' name='approve' value='Approve request'>
+  <form action='/requests/approve/<%= request.id %>' method='post'>
+    <input type='submit' name='approve' value='Approve request'>
+  </form>
 <% end %>
+
+<h1>Your requests for other people's properties</h1>
+
+<% @your_requests.each do |request| %>
+  You requested to rent <%= request.description %> on <%= request.date %>. Your request is <%= request.confirmed ? "" : "not yet " %>approved.
+  <br>
+<% end %>
+
+<br><br>
+<form action='/spaces' method='get'>
+  <input type='submit' name='home' value='home'>
+</form>
