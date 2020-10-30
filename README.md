@@ -1,15 +1,16 @@
 # <div style="text-align: center">Makers BnB (Team MGOD) </div>
 
 <div style="text-align: center"> by: <a href="https://github.com/mace-akkari">Mace</a>, <a href="https://github.com/gonzalober">Gonzalo</a>, <a href="https://github.com/otisvg">Otis</a>, <a href="https://github.com/dan-holmes">Dan</a></div>
-<br>
 
+---
 
 #### Project Summary
-An Airbnb clone created for our Week 5 group project at Makers. We were given a list of specifications that we broke down into into the user stories listed below. We used these user stories to split up tasks and assign them to pairs. 
+An Airbnb clone created for our Week 5 group project at Makers. We were given a list of specifications that we broke down into into the user stories listed below. We used these user stories to split up tasks and assign them to pairs.  
 
 If you would like to try our project out, you'll first need to create a PostgresSQL database and include relevant tables - the commands for doing so can be found at the end of this document.
-<br>
+
 ---
+
 #### Successes
 * We got on really well as a group and approached every day with a positive attitude.
 * We held daily stand-ups, midday-checkins and a retro at the end of the working day.
