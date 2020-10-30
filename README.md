@@ -3,6 +3,8 @@
 <div style="text-align: center"> by: <a href="https://github.com/mace-akkari">Mace</a>, <a href="https://github.com/gonzalober">Gonzalo</a>, <a href="https://github.com/otisvg">Otis</a>, <a href="https://github.com/dan-holmes">Dan</a></div>
 <br>
 ---
+
+
 #### Project Summary
 An Airbnb clone created for our Week 5 group project at Makers. We were given a list of specifications that we broke down into into the user stories listed below. We used these user stories to split up tasks and assign them to pairs. 
 
